@@ -1,0 +1,28 @@
+<h1>Orders</h1>
+<table id="orders-table">
+  <thead>
+    <tr>
+      <th>Room Number</th>
+      <th>Items</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+fetch('/api/orders')
+  .then(response => response.json())
+  .then(orders => {
+    const tableBody = document.querySelector('#orders-table tbody');
+    orders.forEach(order => {
+      const row = `<tr>
+        <td>${order.RoomNumber}</td>
+        <td>${order.Items}</td>
+        <td>${order.Total}</td>
+      </tr>`;
+      tableBody.innerHTML += row;
+    });
+  });
+</script>
+
