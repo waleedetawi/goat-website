@@ -10,19 +10,8 @@
   <tbody></tbody>
 </table>
 
-<script>
-fetch('/api/orders')
-  .then(response => response.json())
-  .then(orders => {
-    const tableBody = document.querySelector('#orders-table tbody');
-    orders.forEach(order => {
-      const row = `<tr>
-        <td>${order.RoomNumber}</td>
-        <td>${order.Items}</td>
-        <td>${order.Total}</td>
-      </tr>`;
-      tableBody.innerHTML += row;
-    });
-  });
-</script>
+<!-- admin.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+<script src="admin.js"></script>
+
 
