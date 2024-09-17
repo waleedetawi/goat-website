@@ -185,18 +185,27 @@
         </div>
     
         <!-- Order Form Section -->
-        <section id="order">
-            <h2>Place Your Order</h2>
-            <form id="order-form">
-                <label for="room-number">Room Number:</label>
-                <input type="text" id="room-number" name="room-number" required>
-    
-                <button type="submit">Submit Order</button>
-            </form>
-            <div id="order-confirmation">Thank you! Your order has been placed successfully.</div>
-        </section>
-    
-        <script src="app.js"></script>
-    </body>
-    </html>
+<!-- Order Form Section -->
+    <section id="order">
+        <h2>Place Your Order</h2>
+
+        <!-- Add `netlify` attribute for automatic form handling -->
+        <form id="order-form" name="order" method="POST" data-netlify="true">
+            <label for="room-number">Room Number:</label>
+            <input type="text" id="room-number" name="room-number" required>
+
+            <!-- Cart items will be dynamically added as hidden inputs -->
+            <div id="cart-items-hidden"></div>
+
+            <input type="hidden" name="form-name" value="order">
+            <button type="submit">Submit Order</button>
+        </form>
+
+        <div id="order-confirmation" style="display:none;">Thank you! Your order has been placed successfully.</div>
+    </section>
+
+    <!-- Add your script for cart handling and form submission -->
+    <script src="app.js"></script>
+</body>
+</html>
     
